@@ -1,13 +1,42 @@
-<div class=" container-fluid container-fluid-custom pb-5 mb-5">
-    <div class=" createnote row mb-4">
-        <div class="col">
-            <h1>Hey , <%=userName%></h1>
-        </div>
-        <div class="col text-end">
-            <a href="/dashboard/add" class="btn btn-primary">+New Note</a>
-        </div>
-    </div>
+<div class="container-fluid container-fluid-custom pb-5 mb-5">
+	<div class="createnote row mb-4">
+		<div class="col">
+			<h1>Hey , <%=userName%></h1>
+		</div>
+		<div class="col text-end">
+			<a href="/dashboard/add" class="btn btn-primary">+New Note</a>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<% if (notes.length > 0) { for (let index = 0; index < notes.length;
+	index++) {%>
 
-    <div class="row"></div>
+	<div class="container-fluid col-sm-3 mb-4">
+		<div class="card border-primary" style="min-height: 210px">
+			<a
+				href="/dashboard/item/<%= notes[index]._id %>"
+				class="card-body text-decoration-none">
+				<h5 class="card-title"><%=notes[index].title%></h5>
+				<p class="card-text"><%= notes[index].body %></p>
+			</a>
+		</div>
+	</div>
 
+	<%} } else { %>
+		<div class="row">
+			<div class="col-3">
+			<img src="" alt="image">
+			</div>
+			<div class="col mt-md-4">
+				<h2>Okay ...</h2>
+				<h4>Let's start with your first notes!<br>
+					<a href="/dashboard/add">Create one!</a>
+					</h4>
+				</div>
+		</div>
+		
+		
+		<%}%>
+</div>
 </div>

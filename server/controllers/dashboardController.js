@@ -10,9 +10,19 @@ exports.dashboard = async (req,res)=>{
         title : "Dashboard",
         description : "Notes Making App",
     }
-    res.render('dashboard/index', {
-        userName: req.user.firstName,
-        locals, 
-        layout: '../views/layouts/dashboard'
-    });
+    try{
+        const notes= await Note.find({});
+        
+        res.render('dashboard/index', {
+            userName: req.user.firstName,
+            locals, 
+            notes,
+            layout: '../views/layouts/dashboard'
+        });
+
+    }
+    catch(error){
+        console.log(error);
+    }
+
 }
