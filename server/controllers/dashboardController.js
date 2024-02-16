@@ -60,7 +60,7 @@
 const Note = require('../models/notes')
 const mongoose = require('mongoose')
 exports.dashboard = async (req, res) => {
-    const perPage = 12;
+    const perPage = 20;
     const page = req.query.page || 1;
     const locals = {
         title: "Dashboard",

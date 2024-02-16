@@ -4,3 +4,13 @@
     display: flex;
     justify-content: space-between;
 }
+.navigation{
+    display: flex;
+    justify-content: center;
+}
+.row{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
