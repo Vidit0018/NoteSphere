@@ -8,5 +8,4 @@ Dashboard Routes
 */
 router.get('/dashboard',isLoggedIn,dashboardController.dashboard)
 
-
 module.exports=router;
